@@ -1,0 +1,20 @@
+<div class="bg-gradient-to-r from-green-700 via-green-500 to-green-400 h-18 w-screen text-white font-bold flex items-center gap-20 p-6">
+    <div class="flex items-center">
+        <!-- { "assets": [ "src/assets" ] } adicinado essa linha para add a imagem no arquivo angular.json -->
+        <img class="w-56 mr-4" [src]="imgLogoSedih" alt="Logo Secretaria dos Direitos Humanos">
+    </div>
+
+    <nav class="flex w-full justify-between">
+        <div>
+            <ul class="text-white flex gap-24">
+                <li><a routerLink="">Inicio</a></li>
+                <li><a routerLink="/agendamentos">Agendamentos</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Sair</li>
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,39 @@
+.fc {
+  font-family: "Poppins", sans-serif; /* Define a fonte para o calendário */
+}
+
+.fc-toolbar-title {
+  font-size: 1.5rem; /* Aumenta o tamanho do título */
+  font-weight: 600; /* Deixa o título em negrito */
+  text-transform: capitalize; /* Capitaliza a primeira letra */
+}
+
+.fc-button {
+  background-color: #007bff; /* Azul para botões */
+  color: white; /* Cor do texto dos botões */
+  border: none; /* Remove bordas */
+  border-radius: 4px; /* Arredonda os botões */
+  padding: 5px 10px;
+}
+
+.fc-button:hover {
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+.fc-daygrid-day {
+  font-size: 0.9rem; /* Ajusta o tamanho da fonte dos dias */
+}
+
+.full-calendar {
+  max-width: 100%; /* Garante que o calendário ocupe toda a largura disponível */
+  height: auto; /* Ajusta automaticamente a altura */
+  margin: 0 auto; /* Centraliza o calendário */
+  padding: 10px; /* Adiciona um espaço ao redor */
+  box-sizing: border-box; /* Inclui padding no cálculo de largura/altura */
+}
+
+@media (max-width: 768px) {
+  .full-calendar {
+    font-size: 0.8em; /* Reduz o tamanho da fonte em telas menores */
+  }
+}
