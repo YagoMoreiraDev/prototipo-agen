@@ -1,0 +1,63 @@
+<div class="mx-1 p-4 bg-white rounded-lg shadow">
+    <div class="mb-4">
+        <h2 class="text-xl font-bold leading-10 text-gray-900">Suas Solicitações:</h2>
+    </div>
+    <div class="overflow-hidden border border-gray-200 rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                        Solicitante
+                    </th>
+                    <th scope="col" class="w-1/3 px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                        Assunto
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                        Data
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                        Status
+                    </th>
+                    <th scope="col" class="w-1/12 relative px-6 py-3">
+                        <span class="sr-only">Edit</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                @for (item of appointments; track item) {
+                    <tr>
+                        <td class="px-6 py-4 text-sm text-gray-900">{{ item.nameRequester }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">{{ item.subject }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">{{ item.dateRequest | date: 'dd/MM/yyyy' }} - {{ item.timeRequest }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">Implementar</td>
+                        <!-- Seção de Açoes - Botão -->
+                        <td class="px-6 py-4 text-right text-sm font-medium">
+                            <ul class="flex justify-end gap-5 items-center">
+                                <!-- Botão de Confirmar -->
+                                <li class="relative group">
+                                    <button>
+                                        <img class="w-8 h-8" src="assets/images/marca-de-verificacao.png" alt="Confirmar">
+                                    </button>
+                                    <span
+                                        class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs font-medium rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                        Confirmar
+                                    </span>
+                                </li>
+                                <!-- Botão de Cancelar -->
+                                <li class="relative group">
+                                    <button>
+                                        <img class="w-6 h-6" src="assets/images/cancelar.png" alt="Cancelar">
+                                    </button>
+                                    <span
+                                        class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs font-medium rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                        Cancelar
+                                    </span>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

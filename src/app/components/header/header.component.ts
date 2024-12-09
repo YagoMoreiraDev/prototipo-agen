@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './header.component.html',
-  //styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  imgLogoSedih: string = 'assets/images/logo.png'
+  imgLogoSedih: string = 'assets/images/logo.png';
+  mobileMenuOpen: boolean = false;
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
 }

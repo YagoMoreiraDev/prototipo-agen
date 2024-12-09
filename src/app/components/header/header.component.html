@@ -1,20 +1,43 @@
-<div class="bg-gradient-to-r from-green-700 via-green-500 to-green-400 h-18 w-screen text-white font-bold flex items-center gap-20 p-6">
+<div
+    class="bg-gradient-to-r from-green-700 via-green-500 to-green-400 h-16 w-full text-white font-bold flex items-center justify-between p-4 md:p-6">
+    <!-- Logo -->
     <div class="flex items-center">
-        <!-- { "assets": [ "src/assets" ] } adicinado essa linha para add a imagem no arquivo angular.json -->
-        <img class="w-56 mr-4" [src]="imgLogoSedih" alt="Logo Secretaria dos Direitos Humanos">
+        <img class="w-32 md:w-56 mr-4" [src]="imgLogoSedih" alt="Logo Secretaria dos Direitos Humanos" />
     </div>
 
-    <nav class="flex w-full justify-between">
-        <div>
-            <ul class="text-white flex gap-24">
-                <li><a routerLink="">Inicio</a></li>
-                <li><a routerLink="/agendamentos">Agendamentos</a></li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li>Sair</li>
-            </ul>
-        </div>
+    <!-- Menu para telas maiores -->
+    <nav class="hidden md:flex w-full justify-between items-center">
+        <ul class="text-white flex gap-6 md:gap-20">
+            <li class="ml-14"><a routerLink="">Inicio</a></li>
+            <li><a routerLink="/agendamentos">Agendamentos</a></li>
+        </ul>
+        <ul>
+            <li class="cursor-pointer">
+                <a class="flex items-center gap-2" href="http://intranet.direitoshumanos.ce.gov.br:9009/sistemas-sedih/">
+                    <img class="w-6 h-6" src="/assets/images/sair.png" alt="Sair">
+                    Sair
+                </a>
+            </li>
+        </ul>
     </nav>
+
+    <!-- Menu para telas pequenas -->
+    <div class="md:hidden flex items-center">
+        <button class="text-white focus:outline-none" (click)="toggleMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Menu suspenso para dispositivos móveis -->
+    <div class="absolute top-16 left-0 w-full bg-gradient-to-r from-green-700 via-green-500 to-green-400 text-white font-bold flex flex-col items-center gap-4 py-4 transition-transform duration-300"
+        [class.hidden]="!mobileMenuOpen">
+        <ul class="text-white flex flex-col gap-4">
+            <li><a routerLink="">Inicio</a></li>
+            <li><a routerLink="/agendamentos">Agendamentos</a></li>
+            <li class="cursor-pointer">Sair</li>
+        </ul>
+    </div>
 </div>

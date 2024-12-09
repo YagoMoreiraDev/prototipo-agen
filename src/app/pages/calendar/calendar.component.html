@@ -1,1 +1,19 @@
-<full-calendar [options]="calendarOptions"></full-calendar>
+<div class="calendar-container">
+    <!-- Botão de Novo Agendamento -->
+     <div class="flex justify-between">
+        <app-button routerLink="/novo-agendamento">Novo Agendamento</app-button>
+        <app-button routerLink="/reserva-agenda">Reservar Horário</app-button>
+     </div>
+    <!-- Calendário -->
+    <full-calendar [options]="calendarOptions" class="full-calendar"></full-calendar>
+
+    <!-- Lista de eventos -->
+    <div *ngIf="selectedEvents.length > 0" class="event-list">
+        <h3>Eventos do dia:</h3>
+        <ul>
+            <li *ngFor="let event of selectedEvents">
+                {{ event.time }} - {{ event.title }}
+            </li>
+        </ul>
+    </div>
+</div>
